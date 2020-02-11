@@ -65,11 +65,13 @@ public class GameController {
     }
 
     public void turnRight(Player player) {
-        // TODO implement player turn right (change of heading)
+        player.setHeading(Heading.EAST);
+        //player turn right (change of heading)
     }
 
     public void turnLeft(Player player) {
-        // TODO implement player turn left (change of heading)
+        player.setHeading(Heading.WEST);
+        //player turn left (change of heading)
     }
 
     public boolean moveCards(@NotNull CommandCardField source, @NotNull CommandCardField target) {
