@@ -51,6 +51,23 @@ public class GameController {
             // TODO compute x and y of the new position when
             //     the player moves forward!
 
+            Heading heading = player.getHeading();
+            switch (heading) {
+                case EAST:
+                    x = (x+1)%player.board.width;
+                    break;
+                case WEST:
+                    x = (x+player.board.width-1)%player.board.width;
+                    break;
+                case NORTH:
+                    y = (y+player.board.height-1)%player.board.height;
+                    break;
+                case SOUTH:
+                    y = (y+1)%player.board.height;
+                    break;
+                default:
+            }
+
             Space newPosition = board.getSpace(x, y);
             if (newPosition != null &&
                     newPosition.getPlayer() == null &&
